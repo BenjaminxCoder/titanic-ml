@@ -1,0 +1,14 @@
+random_state: 42
+target: Survived
+features:
+  numeric: [Age, SibSp, Parch, Fare]
+  categorical: [Pclass, Sex, Embarked]
+model:
+  type: "logistic_regression"        # or "random_forest"
+  params:
+    C: 1.0
+    max_iter: 1000
+cv:
+  folds: 5
+metrics: [roc_auc, accuracy, f1]
+threshold: 0.5
